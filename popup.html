@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Solana Wallet</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Solana Wallet</h1>
+    
+    <div id="wallet-info" style="display: none;">
+      <p>Address: <span id="wallet-address"></span></p>
+      <div id="balances">
+        <div class="balance-item">
+          <span class="token-name">SOL</span>
+          <span class="token-balance" id="sol-balance">Loading...</span>
+        </div>
+        <!-- Token balances will be added here dynamically -->
+      </div>
+      <button id="send-transaction">Send</button>
+      <button id="logout">Logout</button>
+    </div>
+
+    <div id="import-wallet" style="display: block;">
+      <div class="tab-container">
+        <button class="tab-button active" data-tab="mnemonic">Import with Mnemonic</button>
+        <button class="tab-button" data-tab="create">Create New</button>
+      </div>
+
+      <div id="mnemonic-form" class="tab-content active">
+        <textarea id="mnemonic-input" placeholder="Enter your 12/24 word seed phrase"></textarea>
+        <button id="import-wallet-btn">Import Wallet</button>
+      </div>
+
+      <div id="create-wallet" class="tab-content">
+        <button id="create-wallet-btn">Create New Wallet</button>
+        <div id="new-mnemonic" style="display: none;">
+          <p>Please save these words in a secure location:</p>
+          <div class="mnemonic-display"></div>
+          <button id="confirm-mnemonic">I've saved these words</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="transaction-form" style="display: none;">
+      <input type="text" id="recipient" placeholder="Recipient address">
+      <input type="number" id="amount" placeholder="Amount in SOL">
+      <button id="send">Send</button>
+      <button id="cancel">Cancel</button>
+    </div>
+  </div>
+  
+  <script src="dist/bundle.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html> 

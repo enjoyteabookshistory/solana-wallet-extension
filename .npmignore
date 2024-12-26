@@ -1,0 +1,4 @@
+**/*.pem
+**/test/
+**/tests/
+**/__tests__/ 
